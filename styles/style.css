@@ -83,14 +83,13 @@
 
 .vfrc-header.c-iCDrnV .vfrc-avatar {
   position: absolute;
-  left: 0;
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  margin-right: 10px;
 }
 
 .c-iCDrnV .c-kfyIxT {
-  margin: 0px 0px 0px 40px;
+  margin: 0px 0px 0px 55px;
 }
 
 .c-dzcdPv .vfrc-header--button {
