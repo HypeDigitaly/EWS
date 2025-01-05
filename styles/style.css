@@ -206,8 +206,8 @@
 .vfrc-launcher.c-bQoszf {
   width: 80px;
   height: 80px;
-  background-color: #0FC4F2;
-  border: #000000 4px solid;
+  background-color: white;
+  border: #0FC4F2 4px solid;
   animation: fadeIn 0.5s ease-in-out;
   transition: transform 150ms ease 0s, opacity 150ms ease 0s !important;
   box-shadow: #000000;
@@ -215,8 +215,8 @@
 
 .vfrc-launcher.c-bQoszf:hover {
   transform: scale(1.1);
-  opacity: 0.8;
-  background-color: white;
+  opacity: 0.9;
+  background-color: #f5f5f5;
 }
 
 .vfrc-header--button:nth-of-type(1) .vfrc-icon,
