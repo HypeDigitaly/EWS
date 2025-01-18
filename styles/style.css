@@ -23,7 +23,7 @@
 .c-kIbiaN-iiTsXc-size-large {
   width: 72px;
   height: 72px;
-  background-color: #7bdcb5;
+  background-color: #324154;
   border: #000000 1px solid;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .c-PJLV-gJqBfM-from-user {
-  background-color: #7bdcb5;
+  background-color: #324154;
   color: #ffffff;
   text-align: left !important;
   width: auto !important;
@@ -75,7 +75,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  background-color: #7bdcb5;
+  background-color: #324154;
   height: 66px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -122,11 +122,11 @@
 }
 
 .c-bXTvXv-lckiv-type-info {
-  background-color: #7bdcb5;
+  background-color: #324154;
 }
 
 .c-bXTvXv-lckiv-type-info:hover {
-  background-color: #7bdcb5;
+  background-color: #324154;
 }
 
 .vfrc-message {
@@ -145,7 +145,7 @@
   display: inline-block !important;
   width: fit-content !important;
   max-width: calc(100% - 20px) !important;
-  border: 1px solid #7bdcb5;
+  border: 1px solid #324154;
   font-size: 13px;
   font-weight: 500;
   border-radius: 20px;
@@ -238,14 +238,14 @@ button.vfrc-launcher.c-bQoszf:hover {
   font-size: 12px;
   font-weight: 700;
   line-height: 17px;
-  color: #7bdcb5 !important;
+  color: #324154 !important;
 }
 
 .c-cejRNw *,
 .c-cejRNw a,
 .vfrc-footer--watermark *,
 .vfrc-footer--watermark a {
-  color: #7bdcb5 !important;
+  color: #324154 !important;
   font-weight: 700 !important;
   text-decoration: none;
 }
@@ -315,19 +315,19 @@ textarea#vf-chat-input--cm50wq9jx0001356rbFr26w1p {
 
 @keyframes glow {
   0% {
-    box-shadow: 0 0 5px #7bdcb5,
-                0 0 10px #7bdcb5,
-                0 0 15px #7bdcb5;
+    box-shadow: 0 0 5px #324154,
+                0 0 10px #324154,
+                0 0 15px #324154;
   }
   50% {
-    box-shadow: 0 0 10px #7bdcb5,
-                0 0 20px #7bdcb5,
-                0 0 30px #7bdcb5;
+    box-shadow: 0 0 10px #324154,
+                0 0 20px #324154,
+                0 0 30px #324154;
   }
   100% {
-    box-shadow: 0 0 5px #7bdcb5,
-                0 0 10px #7bdcb5,
-                0 0 15px #7bdcb5;
+    box-shadow: 0 0 5px #324154,
+                0 0 10px #324154,
+                0 0 15px #324154;
   }
 }
 
