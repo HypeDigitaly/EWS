@@ -24,6 +24,21 @@ div.f6dof87.f6dof89 {
   z-index: 9999 !important;
 }
 
+/* Fix for proactive messages positioning to prevent overlap with launcher button */
+div.vfrc-proactive._6r9xee0._6r9xee1, 
+div._6r9xee4,
+div._6r9xee3 {
+  margin-bottom: 90px !important; /* Add margin to push messages above the launcher button */
+}
+
+/* Ensure proper width and position for proactive message container */
+div._1wkq7nf9 {
+  bottom: 110px !important; /* Position further up from the button */
+  right: 30px !important;
+  width: auto !important;
+  max-width: 300px !important; /* Reasonable size for message bubble */
+}
+
 /* CLOSED STATE - specific positioning */
 ._1emja3f9:has(img[alt="open chat"]),
 ._1emja3f9:not(:has(#voiceflow-chat)) {
