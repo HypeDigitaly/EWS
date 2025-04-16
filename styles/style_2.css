@@ -38,25 +38,28 @@ div.f6dof87.f6dof89 {
 }
 
 /* ================= PROACTIVE MESSAGE POSITIONING ================= */
-/* Only adjust positioning of the proactive message container */
+/* Critical fix for proactive message positioning */
 .vfrc-proactive_6r9xee0_6r9xee1,
 div.vfrc-proactive_6r9xee0_6r9xee1 {
-  position: relative !important;
-  margin-bottom: 50px !important; /* Increased margin to 50px as requested */
+  position: absolute !important;
+  bottom: 85px !important; /* Just slightly above the button (72px height + small margin) */
+  right: 30px !important;
+  z-index: 9000 !important; /* Lower z-index than the button */
+  margin: 0 !important;
 }
 
-/* Parent container layout for organizing elements */
-._1wkq7nf9:has(.vfrc-proactive_6r9xee0_6r9xee1) {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-end !important;
+/* Ensure parent containers don't interfere with positioning */
+._1wkq7nf9 {
+  position: static !important; /* Allow absolute positioning to work properly */
 }
 
-/* Ensure proper spacing for the chat button container */
-div.f6dof80 {
-  z-index: 9999 !important;
-  clear: both !important;
-  display: block !important;
+/* Fix for the button container */
+div.f6dof80,
+._1wkq7nf9 div.f6dof80 {
+  position: absolute !important;
+  bottom: 30px !important;
+  right: 30px !important;
+  z-index: 9500 !important;
 }
 
 /* ================= CLOSED STATE STYLING ================= */
@@ -389,6 +392,6 @@ button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c
 @media (max-width: 768px) {
   .vfrc-proactive_6r9xee0_6r9xee1,
   div.vfrc-proactive_6r9xee0_6r9xee1 {
-    margin-bottom: 50px !important; /* Keep consistent margin on mobile */
+    bottom: 80px !important; /* Slightly smaller gap on mobile */
   }
 }
