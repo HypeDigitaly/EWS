@@ -1,44 +1,54 @@
+/* 
+ * CHAT WIDGET STYLING
+ * Updated to fix selector targeting and element sizing issues
+ */
+
 /* Main container positioning */
-._1emja3f9 {
+._1emja3f9, ._1wkq7nf9 {
   bottom: 30px !important;
   right: 30px !important;
 }
 
-/* Button container - default state (when closed) */
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(.f6dof8t.f6dof8v.f6dof8g) {
-  width: 84px !important;
-  height: 84px !important;
+/* ===== CLOSED STATE STYLING ===== */
+/* Button container when closed - targeting img with alt="open chat" */
+.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]) {
+  width: 72px !important;
+  height: 72px !important;
   transition: none !important;
   animation: none !important;
   background-color: transparent !important;
   border: none !important;
+  border-radius: 36px !important; /* Half of width/height */
+  overflow: hidden !important;
 }
 
-/* Target both SVG and IMG when in closed state */
-.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(.f6dof8t.f6dof8v.f6dof8g) img.f6dof8t.f6dof8v.f6dof8g {
-  width: 84px !important;
-  height: 84px !important;
-  border-radius: 42px !important;
+/* Target the actual image in closed state using the correct classes from HTML */
+.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]) img.f6dof8u.f6dof8w.f6dof8h {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 36px !important;
   border: none !important;
   box-shadow: none !important;
-  object-fit: contain !important;
+  object-fit: cover !important; /* Prevent image distortion */
 }
 
-/* Container for the image/svg */
-.f6dof86.f6dof88 {
-  width: 84px !important;
-  height: 84px !important;
+/* Container for the image in closed state */
+.f6dof87.f6dof89 {
+  width: 72px !important;
+  height: 72px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  overflow: hidden !important;
 }
 
-/* POUZE PRO OTEVŘENÝ STAV - button s šipkou */
+/* ===== OPENED STATE STYLING ===== */
+/* Button with arrow in opened state */
 button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(svg[viewBox="0 0 32 32"]) {
   width: 42px !important;
   height: 42px !important;
-  background-color: #4C6380 !important;
-  border-radius: 9999px !important;
+  background-color: #4C6380 !important; /* Blue-gray color as specified */
+  border-radius: 50% !important; /* Perfect circle */
   margin-right: 0px !important;
   position: relative !important;
   overflow: hidden !important;
@@ -48,17 +58,26 @@ button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important; /* Optional shadow for depth */
 }
 
-/* POUZE šipka v otevřeném stavu */
+/* Arrow icon in opened state */
 button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(svg[viewBox="0 0 32 32"]) svg {
   width: 24px !important;
   height: 24px !important;
   transform: none !important;
   object-fit: contain !important;
+  fill: #333333 !important; /* Arrow color - adjust as needed */
 }
 
-/* Translation overlay styles - updated approach */
+/* Alternative targeting by container class if needed */
+.f6dof80 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ===== CHAT INTERFACE TRANSLATIONS ===== */
 /* Remove backgrounds and hide original text */
 .vfrc-button_lytjiy0_l7qb7gk0_lytjiv2_lytjiv4,
 button[label="Start new chat"],
@@ -97,7 +116,7 @@ button[label="Start new chat"]::before,
   white-space: nowrap !important;
   pointer-events: none !important;
   z-index: 2 !important;
-  font-family: Arial, sans-serif !important;
+  font-family: "Open Sans", Arial, sans-serif !important;
   font-size: 16px !important;
 }
 
@@ -118,10 +137,11 @@ button[label="Cancel"]::before {
   white-space: nowrap !important;
   pointer-events: none !important;
   z-index: 2 !important;
-  font-family: Arial, sans-serif !important;
+  font-family: "Open Sans", Arial, sans-serif !important;
   font-size: 16px !important;
 }
 
+/* ===== MESSAGE ALIGNMENT FIXES ===== */
 /* Message text alignment */
 .vfrc-message {
   text-align: left !important;
@@ -140,34 +160,34 @@ button[label="Cancel"]::before {
   align-items: flex-start !important;
 }
 
-/* Aktualizovaný styl pro "Chat has ended" text */
+/* "Chat has ended" text translation */
 div[class*="1o69oyc2"] {
   color: transparent !important;
   position: relative !important;
-  text-align: center !important;  /* Přidáno pro centrování */
-  width: 100% !important;  /* Zajistí plnou šířku pro centrování */
+  text-align: center !important;
+  width: 100% !important;
 }
 
 div[class*="1o69oyc2"]::before {
   content: "Chat byl ukončen" !important;
   position: absolute !important;
-  left: 50% !important;  /* Změněno z left: 0 na left: 50% */
+  left: 50% !important;
   top: 50% !important;
-  transform: translate(-50%, -50%) !important;  /* Přidáno -50% v ose X pro přesné centrování */
+  transform: translate(-50%, -50%) !important;
   color: #666666 !important;
   white-space: nowrap !important;
   pointer-events: none !important;
   z-index: 2 !important;
   font-family: "Open Sans", Arial, sans-serif !important;
   font-size: 14px !important;
-  font-weight: 600 !important;  /* Změněno na tučné písmo */
+  font-weight: 600 !important;
   line-height: 1.5 !important;
   letter-spacing: normal !important;
-  display: block !important;  /* Přidáno pro lepší centrování */
-  text-align: center !important;  /* Přidáno pro centrování */
+  display: block !important;
+  text-align: center !important;
 }
 
-/* ADDED TEXT ALIGNMENT FIX */
+/* ===== ADDITIONAL TEXT ALIGNMENT FIXES ===== */
 /* For all chat message containers */
 .vfrc-message,
 div[class*="vfrc-chat-dialog"],
@@ -186,4 +206,27 @@ div[class*="streaming-response-container"] {
 .vfrc-message p,
 div[class*="vfrc-message"] * {
   text-align: left !important;
+}
+
+/* ===== HOVER STATE FIXES ===== */
+/* Prevent unwanted elements on hover in opened state */
+button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:hover::before,
+button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:hover::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ===== PREVENT SVG/IMG TRANSITIONS ===== */
+/* Stop any unwanted transitions for icons/images */
+.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher svg,
+.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher img {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Ensure containers don't resize unexpectedly */
+.f6dof87, .f6dof89, .f6dof80 {
+  transition: none !important;
+  animation: none !important;
 }
