@@ -349,48 +349,25 @@ div[class*="vfrc-message"] * {
 div._6r9xee3.o231sh1 {
   position: relative !important; /* Needed for absolute positioning of pseudo-element */
   z-index: 0 !important; /* Ensure content is above the pseudo-element */
-  overflow: hidden !important; /* Keep the gradient contained */
+  overflow: visible !important; /* Allow box-shadow to be visible */
   border-radius: 10px !important; /* Match the element's border-radius shown in devtools */
-  /* REMOVED padding: 2px !important; */
   /* Ensure background is set so the pseudo-element doesn't show through */
   background-color: #fff !important; /* Assuming white background from devtools */
   color: #1a1e23 !important; /* Assuming default text color from devtools */
+  /* Add the pulsing animation */
+  animation: pulseBorder 2s ease-in-out infinite !important;
 }
 
-/* Define the animated border using a pseudo-element */
-div._6r9xee3.o231sh1::before {
-  content: '' !important;
-  position: absolute !important;
-  /* Position slightly outside and make slightly larger to form a border */
-  top: -3px !important;
-  left: -3px !important;
-  width: calc(100% + 6px) !important; /* 3px border on each side */
-  height: calc(100% + 6px) !important; /* 3px border on top/bottom */
-  background: conic-gradient(
-    from 0deg, /* Use 0deg directly, animation will modify it */
-    #003366, /* Navy */
-    #4a90e2, /* Lighter Blue */
-    #6fa8dc, /* Another blue shade */
-    #4a90e2,
-    #003366
-  ) !important;
-  border-radius: 13px !important; /* Parent radius (10px) + border thickness (3px) */
-  z-index: -1 !important; /* Place it behind the content */
-  animation: rotateBorder 4s linear infinite !important;
-
-  /* REMOVED MASKING PROPERTIES */
-  /* REMOVED padding: 3px !important; */
-}
-
-/* Keyframes for the border rotation - Animate the 'from' angle directly */
-@keyframes rotateBorder {
-  from {
-    /* Cannot directly animate 'from' like this in background */
-    /* Instead, we'll rotate the pseudo-element itself */
-    transform: rotate(0deg);
+/* Keyframes for the pulsing border */
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 5px 0px rgba(74, 144, 226, 0.5); /* Start subtle blue */
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    box-shadow: 0 0 10px 5px rgba(0, 51, 102, 0.7); /* Peak navy blue glow */
+  }
+  100% {
+    box-shadow: 0 0 5px 0px rgba(74, 144, 226, 0.5); /* Back to subtle blue */
   }
 }
 
