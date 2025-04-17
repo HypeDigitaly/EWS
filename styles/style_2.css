@@ -350,28 +350,40 @@ div._6r9xee3.o231sh1 {
   position: relative !important;
   z-index: 0 !important;
   border-radius: 10px !important;
-  background-color: #fff !important;
-  color: #1a1e23 !important;
+  /* background-color: #fff !important; /* Base background will be set by animation */
+  color: #1a1e23 !important; /* Keep original text color */
   opacity: 1 !important;
 
-  outline-style: solid !important;
-  outline-offset: 3px !important;
-  animation: pulseOutline 2s ease-in-out infinite !important;
+  /* Add scale pulse AND color pulse animations */
+  animation:
+      pulseScale 1.8s ease-in-out infinite,
+      pulseColor 1.8s ease-in-out infinite !important;
+  transform-origin: center center !important; /* Ensure scaling happens from the center */
 }
 
-/* Keyframes for the pulsing outline */
-@keyframes pulseOutline {
+/* Keyframes for the pulsing scale */
+@keyframes pulseScale {
   0% {
-    outline-color: rgba(74, 144, 226, 0.5) !important;
-    outline-width: 2px !important;
+    transform: scale(1);
   }
   50% {
-    outline-color: rgba(0, 51, 102, 0.7) !important;
-    outline-width: 4px !important;
+    transform: scale(1.04); /* Slightly larger */
   }
   100% {
-    outline-color: rgba(74, 144, 226, 0.5) !important;
-    outline-width: 2px !important;
+    transform: scale(1);
+  }
+}
+
+/* Keyframes for pulsing background color */
+@keyframes pulseColor {
+  0% {
+    background-color: #ffffff !important; /* Start white */
+  }
+  50% {
+    background-color: #d8e1eb !important; /* Lighter shade derived from #5F7CA0 */
+  }
+  100% {
+    background-color: #ffffff !important; /* Back to white */
   }
 }
 
