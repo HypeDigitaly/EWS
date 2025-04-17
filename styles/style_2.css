@@ -100,7 +100,6 @@ div.f6dof80:has(img[alt="open chat"]) {
   max-height: 100px !important;
   border-radius: 50px !important;
   border: 2px solid #000000 !important;
-  box-shadow: none !important;
   object-fit: contain !important;
   object-position: center !important;
   transition: all 0.3s ease !important;
@@ -110,6 +109,20 @@ div.f6dof80:has(img[alt="open chat"]) {
   box-sizing: content-box !important;
   transform: none !important;
   aspect-ratio: 1/1 !important;
+  animation: pulseImageGlow 2.5s ease-in-out infinite !important;
+}
+
+/* Keyframes for the image glow pulse */
+@keyframes pulseImageGlow {
+  0% {
+    box-shadow: 0 0 8px 2px rgba(95, 124, 160, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 16px 6px rgba(95, 124, 160, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 8px 2px rgba(95, 124, 160, 0.6);
+  }
 }
 
 /* ================= OPENED STATE STYLING ================= */
@@ -350,30 +363,30 @@ div._6r9xee3.o231sh1 {
   position: relative !important;
   z-index: 0 !important;
   border-radius: 10px !important;
-  /* background-color: #fff !important; /* Base background will be set by animation */
-  color: #1a1e23 !important; /* Keep original text color */
+  background-color: #fff !important; /* Restore static background */
+  color: #1a1e23 !important;
   opacity: 1 !important;
 
-  /* Test ONLY color pulse animation */
-  animation: pulseColor 1.8s ease-in-out infinite !important; /* Removed pulseScale, corrected !important placement */
-  /* transform-origin: center center !important; */ /* Not needed for color */
+  /* Restore ONLY scale pulse animation */
+  animation: pulseScale 1.8s ease-in-out infinite !important;
+  transform-origin: center center !important;
 }
 
-/* REMOVE Keyframes for the pulsing scale for now */
-/* @keyframes pulseScale { ... } */
-
-/* Keyframes for pulsing background color */
-@keyframes pulseColor {
+/* Restore Keyframes for the pulsing scale */
+@keyframes pulseScale {
   0% {
-    background-color: #ffffff !important; /* Start white */
+    transform: scale(1);
   }
   50% {
-    background-color: #d8e1eb !important; /* Lighter shade derived from #5F7CA0 */
+    transform: scale(1.04); /* Slightly larger */
   }
   100% {
-    background-color: #ffffff !important; /* Back to white */
+    transform: scale(1);
   }
 }
+
+/* REMOVE Keyframes for pulsing background color */
+/* @keyframes pulseColor { ... } */
 
 /* Ensure text inside is visible above the background color */
 div._6r9xee3.o231sh1 > * {
