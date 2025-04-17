@@ -356,6 +356,7 @@ div._6r9xee3.o231sh1 {
   color: #1a1e23 !important; /* Assuming default text color from devtools */
   /* Add the pulsing animation */
   animation: pulseBorder 2s ease-in-out infinite !important;
+  opacity: 1 !important; /* ADDED: Override default opacity: 0 */
 }
 
 /* Keyframes for the pulsing border */
