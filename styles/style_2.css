@@ -342,5 +342,5 @@ div[class*="vfrc-message"] * {
 /* The original 'bottom: 100%' positions the bottom edge of this container
    at the top edge of its parent. Adding margin-bottom pushes it further up. */
 ._6r9xee0 {
-  margin-bottom: 50px !important; /* Move upwards by 50px */
+  margin-bottom: 75px !important; /* Move upwards by 50px */
 }
