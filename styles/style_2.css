@@ -367,7 +367,7 @@ div._6r9xee3.o231sh1::before {
   width: calc(100% + 6px) !important; /* 3px border on each side */
   height: calc(100% + 6px) !important; /* 3px border on top/bottom */
   background: conic-gradient(
-    from var(--angle),
+    from 0deg, /* Use 0deg directly, animation will modify it */
     #003366, /* Navy */
     #4a90e2, /* Lighter Blue */
     #6fa8dc, /* Another blue shade */
@@ -382,20 +382,15 @@ div._6r9xee3.o231sh1::before {
   /* REMOVED padding: 3px !important; */
 }
 
-/* Define the angle property for smooth animation */
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-/* Keyframes for the border rotation */
+/* Keyframes for the border rotation - Animate the 'from' angle directly */
 @keyframes rotateBorder {
   from {
-    --angle: 0deg;
+    /* Cannot directly animate 'from' like this in background */
+    /* Instead, we'll rotate the pseudo-element itself */
+    transform: rotate(0deg);
   }
   to {
-    --angle: 360deg;
+    transform: rotate(360deg);
   }
 }
 
