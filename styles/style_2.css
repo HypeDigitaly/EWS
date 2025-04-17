@@ -1,76 +1,27 @@
-/* ================= PROACTIVE MESSAGE POSITIONING ================= */
-/* Critical fix for proactive message positioning */
-.vfrc-proactive_6r9xee0_6r9xee1,
-div.vfrc-proactive_6r9xee0_6r9xee1 {
-  position: fixed !important;
-  bottom: 120px !important; /* Increased from 110px to ensure it's above the button */
-  right: 30px !important;
-  z-index: 9999 !important;
-  display: block !important;
-  visibility: visible !important;
-  width: 250px !important; /* Set explicit width based on screenshot */
-  max-width: 250px !important;
-  /* Ensure no overlap with launcher button */
-  margin-bottom: 10px !important;
-  /* Add clean box styling */
-  border-radius: 8px !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15) !important;
-  overflow: hidden !important;
-}
-
-/* Make the proactive content visible */
-div.vfrc-proactive_6r9xee0_6r9xee1 > div,
-.vfrc-proactive_6r9xee0_6r9xee1 > div {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Position the hide messages button properly */
-button.vfrc-button_1q15b0b0.c26d8x0._1q15b0b2._1q15b0b5_6r9xee5,
-button[title="Hide messages"] {
-  position: absolute !important;
-  right: 8px !important;
-  top: 8px !important;
-  z-index: 9999 !important;
-}
-
-/* Specifically target the embedded message div in proactive message */
-div.vfrc-proactive_6r9xee0_6r9xee1 div._6r9xee3.o2315h1 {
-  display: block !important;
-  width: 100% !important;
-  padding: 15px !important;
-  padding-right: 30px !important; /* Make room for the close button */
-}
-
-/* Fix for container in opened and closed states */
-._1emja3f9:has(#voiceflow-chat),
-._1emja3f9:not(:has(#voiceflow-chat)) {
-  position: fixed !important;
-  z-index: 9500 !important; /* Lower than proactive message */
-}
-
-/* Ensure the launcher button stays properly positioned */
-div.f6dof80 {
-  position: fixed !important;
-  bottom: 30px !important;
-  right: 30px !important;
-  z-index: 9500 !important;
+/* Target the launcher button in closed state */
+.f6dof80:not(.f6dof89) svg {
   width: 72px !important;
   height: 72px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  background-size: cover !important;
 }
 
-/* Media query adjustments for mobile */
-@media (max-width: 768px) {
-  .vfrc-proactive_6r9xee0_6r9xee1,
-  div.vfrc-proactive_6r9xee0_6r9xee1 {
-    bottom: 110px !important;
-    width: 220px !important;
-    max-width: 80vw !important;
-    right: 20px !important;
-  }
-  
-  div.f6dof80 {
-    bottom: 20px !important;
-    right: 20px !important;
-  }
+/* Ensure the button container accommodates the larger SVG */
+.f6dof80:not(.f6dof89) {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: transparent !important;
+}
+
+/* Keep current size for opened state - these are already defined in the site CSS,
+   but explicitly stating them here for clarity */
+.f6dof80.f6dof89 svg {
+  width: 32px;
+  height: 32px;
 }
