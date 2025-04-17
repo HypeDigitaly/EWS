@@ -1,2 +1,27 @@
-/* TEST */
+/* Target the launcher button in closed state */
+.f6dof80:not(.f6dof89) svg {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  background-size: cover !important;
+}
 
+/* Ensure the button container accommodates the larger SVG */
+.f6dof80:not(.f6dof89) {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: transparent !important;
+}
+
+/* Keep current size for opened state - these are already defined in the site CSS,
+   but explicitly stating them here for clarity */
+.f6dof80.f6dof89 svg {
+  width: 32px;
+  height: 32px;
+}
