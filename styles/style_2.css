@@ -354,25 +354,13 @@ div._6r9xee3.o231sh1 {
   color: #1a1e23 !important; /* Keep original text color */
   opacity: 1 !important;
 
-  /* Add scale pulse AND color pulse animations */
-  animation:
-      pulseScale 1.8s ease-in-out infinite,
-      pulseColor 1.8s ease-in-out infinite !important;
-  transform-origin: center center !important; /* Ensure scaling happens from the center */
+  /* Test ONLY color pulse animation */
+  animation: pulseColor 1.8s ease-in-out infinite !important; /* Removed pulseScale, corrected !important placement */
+  /* transform-origin: center center !important; */ /* Not needed for color */
 }
 
-/* Keyframes for the pulsing scale */
-@keyframes pulseScale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.04); /* Slightly larger */
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+/* REMOVE Keyframes for the pulsing scale for now */
+/* @keyframes pulseScale { ... } */
 
 /* Keyframes for pulsing background color */
 @keyframes pulseColor {
