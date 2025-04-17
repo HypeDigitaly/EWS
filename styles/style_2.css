@@ -99,7 +99,7 @@ div.f6dof80:has(img[alt="open chat"]) {
   max-width: 100px !important;
   max-height: 100px !important;
   border-radius: 50px !important;
-  border: 2px solid #000000 !important;
+  border: 4px solid #5F7CA0 !important;
   object-fit: contain !important;
   object-position: center !important;
   transition: all 0.3s ease !important;
@@ -303,14 +303,14 @@ button[label="Cancel"]::before {
 }
 
 /* Aktualizovaný styl pro "Chat has ended" text */
-div[class*="1o69oyc2"] {
+div[class*="t1cwqp"] {
   color: transparent !important;
   position: relative !important;
   text-align: center !important;
   width: 100% !important;
 }
 
-div[class*="1o69oyc2"]::before {
+div[class*="t1cwqp"]::before {
   content: "Chat byl ukončen" !important;
   position: absolute !important;
   left: 50% !important;
