@@ -342,62 +342,44 @@ div[class*="vfrc-message"] * {
 /* The original 'bottom: 100%' positions the bottom edge of this container
    at the top edge of its parent. Adding margin-bottom pushes it further up. */
 ._6r9xee0 {
-  margin-bottom: 60px !important; /* Move upwards by 50px */
+  margin-bottom: 60px !important; /* Move upwards */
+  /* Ensure the container doesn't clip the animated border */
+  padding: 3px !important; 
+}
+
+/* Style the proactive message box itself */
+._6r9xee4 {
   position: relative !important;
-  border-radius: 12px !important;
-  overflow: visible !important;
+  z-index: 0 !important; /* Ensure content is above the ::before */
+  padding: 10px 15px !important; /* Add padding for text */
+  border-radius: 8px !important; /* Match the visual */
+  overflow: hidden !important; /* Clip the pseudo-element */
+  background-color: var(--_1bof89n5, #5F7CA0) !important; /* Use existing background or fallback */
+  color: white !important; /* Ensure text is readable */
 }
 
-/* Animated border effect for proactive message */
-._6r9xee0::before {
-  content: "" !important;
+/* Animated border pseudo-element */
+._6r9xee4::before {
+  content: '' !important;
   position: absolute !important;
-  top: -3px !important;
-  left: -3px !important;
-  right: -3px !important;
-  bottom: -3px !important;
-  border-radius: 14px !important;
-  background: linear-gradient(90deg, 
-    #1e3a8a 0%, 
-    #2563eb 25%, 
-    #3b82f6 50%, 
-    #2563eb 75%, 
-    #1e3a8a 100%
-  ) !important;
-  background-size: 200% 100% !important;
-  animation: borderFlow 3s linear infinite !important;
-  z-index: -1 !important;
+  z-index: -1 !important; /* Behind the content */
+  top: -2px !important; /* Control border thickness */
+  left: -2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+  background: conic-gradient(from var(--angle), #3b82f6, #1e40af, #3b82f6) !important; /* Blue/Navy gradient */
+  border-radius: inherit !important; /* Inherit parent's border-radius */
+  animation: animated-border 4s linear infinite !important;
 }
 
-@keyframes borderFlow {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
+/* Keyframes for the border animation */
+@keyframes animated-border {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
 }
 
-/* Add subtle glow effect */
-._6r9xee0::after {
-  content: "" !important;
-  position: absolute !important;
-  top: -5px !important;
-  left: -5px !important;
-  right: -5px !important;
-  bottom: -5px !important;
-  border-radius: 16px !important;
-  background: transparent !important;
-  box-shadow: 0 0 15px rgba(37, 99, 235, 0.2) !important;
-  z-index: -2 !important;
-  animation: glowPulse 2s ease-in-out infinite !important;
-}
-
-@keyframes glowPulse {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
+/* Ensure text inside is aligned if needed (redundant with previous rules but safe) */
+._6r9xee4 > div {
+   text-align: left !important;
+   color: white !important; /* Explicitly set text color */
 }
