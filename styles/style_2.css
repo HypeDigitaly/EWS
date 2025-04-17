@@ -336,3 +336,11 @@ div[class*="streaming-response-container"] {
 div[class*="vfrc-message"] * {
   text-align: left !important;
 }
+
+/* ================= PROACTIVE MESSAGE STYLING ================= */
+/* Adjust vertical position of the proactive message container */
+/* The original 'bottom: 100%' positions the bottom edge of this container
+   at the top edge of its parent. Adding margin-bottom pushes it further up. */
+._6r9xee0 {
+  margin-bottom: 50px !important; /* Move upwards by 50px */
+}
