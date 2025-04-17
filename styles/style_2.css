@@ -1,5 +1,5 @@
 /* Target specifically the profile image in closed state */
-.f6dof80:not(.f6dof89) img.f6dof8u.f6dof8v.f6dof8i {
+.vfrc-launcher:not(.f6dof89) img.f6dof8u.f6dof8w.f6dof8h {
   width: 72px !important;
   height: 72px !important;
   border-radius: 50% !important;
@@ -7,11 +7,16 @@
 }
 
 /* Adjust the container for the larger image */
-.f6dof80:not(.f6dof89) .f6dof87 {
+.vfrc-launcher:not(.f6dof89) .f6dof87.f6dof89 {
   width: 72px !important;
   height: 72px !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   background-color: transparent !important;
+}
+
+/* Ensure parent elements don't clip the larger image */
+div.f6dof87.f6dof89 {
+  overflow: visible !important;
 }
