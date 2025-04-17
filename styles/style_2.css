@@ -347,28 +347,31 @@ div[class*="vfrc-message"] * {
 
 /* Style the inner proactive message div for the animated border */
 div._6r9xee3.o231sh1 {
-  position: relative !important; /* Needed for absolute positioning of pseudo-element */
-  z-index: 0 !important; /* Ensure content is above the pseudo-element */
-  overflow: visible !important; /* Allow box-shadow to be visible */
-  border-radius: 10px !important; /* Match the element's border-radius shown in devtools */
-  /* Ensure background is set so the pseudo-element doesn't show through */
-  background-color: #fff !important; /* Assuming white background from devtools */
-  color: #1a1e23 !important; /* Assuming default text color from devtools */
-  /* Add the pulsing animation */
-  animation: pulseBorder 2s ease-in-out infinite !important;
-  opacity: 1 !important; /* ADDED: Override default opacity: 0 */
+  position: relative !important;
+  z-index: 0 !important;
+  border-radius: 10px !important;
+  background-color: #fff !important;
+  color: #1a1e23 !important;
+  opacity: 1 !important;
+
+  outline-style: solid !important;
+  outline-offset: 3px !important;
+  animation: pulseOutline 2s ease-in-out infinite !important;
 }
 
-/* Keyframes for the pulsing border */
-@keyframes pulseBorder {
+/* Keyframes for the pulsing outline */
+@keyframes pulseOutline {
   0% {
-    box-shadow: 0 0 5px 0px rgba(74, 144, 226, 0.5); /* Start subtle blue */
+    outline-color: rgba(74, 144, 226, 0.5) !important;
+    outline-width: 2px !important;
   }
   50% {
-    box-shadow: 0 0 10px 5px rgba(0, 51, 102, 0.7); /* Peak navy blue glow */
+    outline-color: rgba(0, 51, 102, 0.7) !important;
+    outline-width: 4px !important;
   }
   100% {
-    box-shadow: 0 0 5px 0px rgba(74, 144, 226, 0.5); /* Back to subtle blue */
+    outline-color: rgba(74, 144, 226, 0.5) !important;
+    outline-width: 2px !important;
   }
 }
 
