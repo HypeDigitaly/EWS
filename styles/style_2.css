@@ -351,17 +351,21 @@ div._6r9xee3.o231sh1 {
   z-index: 0 !important; /* Ensure content is above the pseudo-element */
   overflow: hidden !important; /* Keep the gradient contained */
   border-radius: 10px !important; /* Match the element's border-radius shown in devtools */
-  padding: 2px !important; /* Add slight padding to prevent content overlap if needed */
+  /* REMOVED padding: 2px !important; */
+  /* Ensure background is set so the pseudo-element doesn't show through */
+  background-color: #fff !important; /* Assuming white background from devtools */
+  color: #1a1e23 !important; /* Assuming default text color from devtools */
 }
 
 /* Define the animated border using a pseudo-element */
 div._6r9xee3.o231sh1::before {
   content: '' !important;
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
+  /* Position slightly outside and make slightly larger to form a border */
+  top: -3px !important;
+  left: -3px !important;
+  width: calc(100% + 6px) !important; /* 3px border on each side */
+  height: calc(100% + 6px) !important; /* 3px border on top/bottom */
   background: conic-gradient(
     from var(--angle),
     #003366, /* Navy */
@@ -370,16 +374,12 @@ div._6r9xee3.o231sh1::before {
     #4a90e2,
     #003366
   ) !important;
-  border-radius: inherit !important; /* Inherit border-radius from parent */
+  border-radius: 13px !important; /* Parent radius (10px) + border thickness (3px) */
   z-index: -1 !important; /* Place it behind the content */
   animation: rotateBorder 4s linear infinite !important;
 
-  /* Create the inner "hole" by masking */
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important; /* Safari */
-  mask-composite: exclude !important;
-  -webkit-mask-composite: xor !important; /* Safari */
-  padding: 3px !important; /* This controls the thickness of the border */
+  /* REMOVED MASKING PROPERTIES */
+  /* REMOVED padding: 3px !important; */
 }
 
 /* Define the angle property for smooth animation */
@@ -397,4 +397,10 @@ div._6r9xee3.o231sh1::before {
   to {
     --angle: 360deg;
   }
+}
+
+/* Ensure text inside is visible above the background color */
+div._6r9xee3.o231sh1 > * {
+    position: relative;
+    z-index: 1;
 }
