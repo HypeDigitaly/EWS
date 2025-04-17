@@ -1,45 +1,42 @@
-/* Target the image specifically */
-.vfrc-launcher:not(.f6dof89) img.f6dof8u.f6dof8w.f6dof8h {
+/* Target only the image in closed state */
+div.f6dof80:not(.f6dof89) img.f6dof8u.f6dof8v.f6dof8i,
+div.f6dof80:not(.f6dof89) img.f6dof8u.f6dof8w.f6dof8h {
   width: 72px !important;
   height: 72px !important;
   object-fit: cover !important;
   border-radius: 50% !important;
-  max-width: none !important;
-  min-width: 72px !important;
-  min-height: 72px !important;
-  position: absolute !important;
-  z-index: 100 !important;
-  transform: scale(1) !important;
-}
-
-/* Adjust all potential parent containers */
-.vfrc-launcher:not(.f6dof89) div,
-.vfrc-launcher:not(.f6dof89) button,
-.vfrc-launcher:not(.f6dof89) span {
-  overflow: visible !important;
-  max-width: none !important;
-  max-height: none !important;
-}
-
-/* Force the specific div containers to allow content overflow */
-div.f6dof87, div.f6dof89, div.f6dof80, div.f6dof8i {
-  overflow: visible !important;
-  position: relative !important;
+  max-width: 72px !important;
+  max-height: 72px !important;
   min-width: 72px !important;
   min-height: 72px !important;
 }
 
-/* Set the button itself to have appropriate dimensions */
+/* Keep the dimensions for opened state at the original size */
+div.f6dof80.f6dof89 img.f6dof8u.f6dof8v.f6dof8i,
+div.f6dof80.f6dof89 img.f6dof8u.f6dof8w.f6dof8h {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+}
+
+/* Ensure parent containers don't constrain the image in closed state */
+div.f6dof80:not(.f6dof89) {
+  overflow: visible !important;
+}
+
+div.f6dof80:not(.f6dof89) .f6dof87 {
+  overflow: visible !important;
+}
+
+/* Remove any potential background that might be visible behind the image */
+div.f6dof80:not(.f6dof89) .f6dof87 {
+  background-color: transparent !important;
+}
+
+/* Ensure the button container doesn't clip the larger image */
 button.vfrc-button_1q15b0b0.c26d8x0_1q15b0b2.vfrc-launcher.f6dof81_1q15b0b5:not(.f6dof89) {
-  width: 72px !important;
-  height: 72px !important;
   overflow: visible !important;
-  position: relative !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Target the SVG container to ensure it doesn't constrain the image */
-.vfrc-launcher:not(.f6dof89) svg {
-  display: none !important;
 }
