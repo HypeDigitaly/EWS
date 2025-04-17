@@ -344,3 +344,57 @@ div[class*="vfrc-message"] * {
 ._6r9xee0 {
   margin-bottom: 60px !important; /* Move upwards by 50px */
 }
+
+/* Style the inner proactive message div for the animated border */
+div._6r9xee3.o231sh1 {
+  position: relative !important; /* Needed for absolute positioning of pseudo-element */
+  z-index: 0 !important; /* Ensure content is above the pseudo-element */
+  overflow: hidden !important; /* Keep the gradient contained */
+  border-radius: 10px !important; /* Match the element's border-radius shown in devtools */
+  padding: 2px !important; /* Add slight padding to prevent content overlap if needed */
+}
+
+/* Define the animated border using a pseudo-element */
+div._6r9xee3.o231sh1::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: conic-gradient(
+    from var(--angle),
+    #003366, /* Navy */
+    #4a90e2, /* Lighter Blue */
+    #6fa8dc, /* Another blue shade */
+    #4a90e2,
+    #003366
+  ) !important;
+  border-radius: inherit !important; /* Inherit border-radius from parent */
+  z-index: -1 !important; /* Place it behind the content */
+  animation: rotateBorder 4s linear infinite !important;
+
+  /* Create the inner "hole" by masking */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important; /* Safari */
+  mask-composite: exclude !important;
+  -webkit-mask-composite: xor !important; /* Safari */
+  padding: 3px !important; /* This controls the thickness of the border */
+}
+
+/* Define the angle property for smooth animation */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Keyframes for the border rotation */
+@keyframes rotateBorder {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
