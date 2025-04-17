@@ -27,8 +27,8 @@ div.f6dof87.f6dof89 {
 /* CLOSED STATE - specific positioning */
 ._1emja3f9:has(img[alt="open chat"]),
 ._1emja3f9:not(:has(#voiceflow-chat)) {
-  bottom: 30px !important;
-  right: 30px !important;
+  bottom: 15px !important;
+  right: 15px !important;
 }
 
 /* OPENED STATE - specific positioning */
@@ -61,8 +61,8 @@ div.f6dof87.f6dof89 {
   box-sizing: content-box !important;
   transform: none !important;
   position: fixed !important;
-  bottom: 30px !important;
-  right: 30px !important;
+  bottom: 15px !important;
+  right: 15px !important;
 }
 
 /* Additional selectors for parent container in closed state */
